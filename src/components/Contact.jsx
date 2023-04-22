@@ -82,10 +82,10 @@ const Contact = () => {
 
     emailjs
       .sendForm(
-        "service_id",
-        "template_id",
+        "service_c6p7507",
+        "template_9x4ekec",
         ref.current,
-        "public_key"
+        "0vaM2ygpvxuEJMGg-"
       )
       .then(
         (result) => {
@@ -103,7 +103,7 @@ const Contact = () => {
       <Container>
         <Left>
           <Form ref={ref} onSubmit={handleSubmit}>
-            <Title>Contact Us</Title>
+            <Title>Contact Me</Title>
             <Input placeholder="Name" name="name" />
             <Input placeholder="Email" name="email" />
             <TextArea
@@ -113,7 +113,7 @@ const Contact = () => {
             />
             <Button type="submit">Send</Button>
             {success &&
-              "Your message has been sent. We'll get back to you soon :)"}
+              "Your message has been sent. I'll get back to you soon :)"}
           </Form>
         </Left>
         <Right>
