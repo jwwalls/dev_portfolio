@@ -1,8 +1,6 @@
-import React, { Suspense } from "react";
+import React from "react";
 import styled from "styled-components";
-import { OrbitControls } from "@react-three/drei";
-import { Canvas } from "@react-three/fiber";
-import Cube from "./Cube";
+
 
 const Section = styled.div`
   height: 100vh;
@@ -116,22 +114,21 @@ const Name = styled.div`
 `;
 
 const SkillsData = [
-  { name: "JavaScript", src: "src/assets/tech/javascript.png" },
-  { name: "Python", src: "src/assets/tech/python.png" },
-  { name: "C", src: "src/assets/tech/c.png" },
-  { name: "Linux", src: "src/assets/tech/linux.png" },
-  { name: "React.js", src: "src/assets/tech/reactjs.png" },
-  { name: "Git", src: "src/assets/tech/git.png" },
-  { name: "MongoDB", src: "src/assets/tech/mongodb.png" },
-  { name: "Node.js", src: "src/assets/tech/nodejs.png" },
-  { name: "PostgreSQL", src: "src/assets/tech/psql.png" },
-  { name: "Docker", src: "src/assets/tech/docker.png" },
-  { name: "HTML", src: "src/assets/tech/html.png" },
-  { name: "CSS", src: "src/assets/tech/css.png" },
-  { name: "Flask", src: "src/assets/tech/flask.png" },
-  { name: "Three.js", src: "src/assets/tech/three.png" },
-  { name: "Tailwind", src: "src/assets/tech/tailwind.png" },
-
+  { name: "JavaScript", src: "./img/javascript.png" },
+  { name: "Python", src: "./img/python.png" },
+  { name: "C", src: "./img/c.png" },
+  { name: "Linux", src: "./img/linux.png" },
+  { name: "Docker", src: "./img/docker.png" },
+  { name: "Git", src: "./img/git.png" },
+  { name: "MongoDB", src: "./img/mongodb.png" },
+  { name: "Node.js", src: "./img/nodejs.png" },
+  { name: "PostgreSQL", src: "./img/psql.png" },
+  { name: "Flask", src: "./img/flask.png" },
+  { name: "HTML", src: "./img/html.png" },
+  { name: "CSS", src: "./img/css.png" },
+  { name: "React.js", src: "./img/reactjs.png" },
+  { name: "Three.js", src: "./img/three.png" },
+  { name: "Tailwind", src: "./img/tailwind.png" },
 ];
 
 const Who = () => {

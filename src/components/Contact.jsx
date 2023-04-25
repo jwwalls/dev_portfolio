@@ -73,6 +73,30 @@ const Right = styled.div`
   }
 `;
 
+const Footer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+`;
+const FooterImg = styled.a`
+  background-color: transparent;
+  border-radius: 50%;
+
+  img {
+    height: 50px;
+    border-radius: 50%;
+    transition: all 0.3s ease-in-out;
+    
+  }
+
+  :hover {
+    box-shadow: 0px 0px 0px 2px rgba(255, 0, 255, 0.8);
+  }
+`;
+
+
+
 const Contact = () => {
   const ref = useRef();
   const [success, setSuccess] = useState(null);
@@ -115,6 +139,23 @@ const Contact = () => {
               <Button type="submit">Send</Button>
               {success &&
                 "Your message has been sent. I'll get back to you soon :)"}
+              <Footer >
+                <FooterImg
+                  href="https://www.linkedin.com/in/jeremie-walls-046a13152/"
+                  target="_blank"
+                >
+                  <img class="bot" src="./img/linkin.png" />
+                </FooterImg>
+                <FooterImg href="https://github.com/jwwalls" target="_blank">
+                  <img class="bot" src="./img/github.png" />
+                </FooterImg>
+                <FooterImg
+                  href="https://www.youtube.com/watch?v=kKr9-E7kS6M"
+                  target="_blank"
+                >
+                  <img class="bot" src="./img/youtube.png" />
+                </FooterImg>
+              </Footer>
             </Form>
           </Left>
           <Right>

@@ -84,7 +84,12 @@ const Icon = styled.img`
   cursor: pointer;
 `;
 
-const Button = styled.button`
+const Button = styled.a`
+  text-decoration: none;
+  display: flex;
+  align-items:  center;
+  justify-content: center;
+  font-weight: 400;
   width: 100px;
   padding: 10px;
   background-color: #da4ea2;
@@ -139,7 +144,7 @@ const Navbar = () => {
         </Links>
         <Icons>
          
-          <Button>Resume</Button>
+          <Button href="./img/Jeremie_Walls_Resume.docx" >Resume</Button>
         </Icons>
       </Container>
     </Section>
