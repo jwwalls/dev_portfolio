@@ -76,7 +76,11 @@ const Desc = styled.p`
   }
 `;
 
-const Button = styled.button`
+const Button = styled.a`
+display: flex;
+
+justify-content: center;
+text-decoration: none;
   background-color: #da4ea2;
   color: white;
   font-weight: 500;
@@ -122,19 +126,20 @@ const Img = styled.img`
 
 const Hero = () => {
   return (
-    <Section>
+    <div id="home">
+    <Section>      
       <Navbar />
       <Container>
         <Left>
-          <Title>Think. Make. Solve.</Title>
+          <Title>Hi, I'm Jeremie.</Title>
           <WhatWeDo>
             <Line src="./img/line.png" />
-            <Subtitle>What we Do</Subtitle>
+            <Subtitle>Who Am I</Subtitle>
           </WhatWeDo>
           <Desc>
-            we enjoy creating delightful, human-centered digital experiences.
+          I thrive on challenges and problem-solving. With a constant thirst for knowledge, I'm always looking for innovative solutions to complex problems. 
           </Desc>
-          <Button>Learn More</Button>
+          <Button href="#about">Learn More</Button>
         </Left>
         <Right>
           <Canvas>
@@ -156,7 +161,10 @@ const Hero = () => {
         </Right>
       </Container>
     </Section>
+    </div>
   );
 };
+
+
 
 export default Hero;

@@ -99,28 +99,30 @@ const Contact = () => {
       );
   };
   return (
-    <Section>
-      <Container>
-        <Left>
-          <Form ref={ref} onSubmit={handleSubmit}>
-            <Title>Contact Me</Title>
-            <Input placeholder="Name" name="name" />
-            <Input placeholder="Email" name="email" />
-            <TextArea
-              placeholder="Write your message"
-              name="message"
-              rows={10}
-            />
-            <Button type="submit">Send</Button>
-            {success &&
-              "Your message has been sent. I'll get back to you soon :)"}
-          </Form>
-        </Left>
-        <Right>
-          <Map />
-        </Right>
-      </Container>
-    </Section>
+    <div id="contact">
+      <Section>
+        <Container>
+          <Left>
+            <Form ref={ref} onSubmit={handleSubmit}>
+              <Title>Contact Me</Title>
+              <Input placeholder="Name" name="name" />
+              <Input placeholder="Email" name="email" />
+              <TextArea
+                placeholder="Write your message"
+                name="message"
+                rows={10}
+              />
+              <Button type="submit">Send</Button>
+              {success &&
+                "Your message has been sent. I'll get back to you soon :)"}
+            </Form>
+          </Left>
+          <Right>
+            <Map />
+          </Right>
+        </Container>
+      </Section>
+    </div>
   );
 };
 

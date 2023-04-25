@@ -71,7 +71,7 @@ const ListItem = styled.li`
     position: absolute;
     top: 0;
     left: 0;
-    color: pink;
+    color: #da4ea2;
     width: 0px;
     overflow: hidden;
     white-space: nowrap;
@@ -97,28 +97,30 @@ const Right = styled.div`
 const Works = () => {
   const [work, setWork] = useState("Web Design");
   return (
-    <Section>
-      <Container>
-        <Left>
-          <List>
-            {data.map((item) => (
-              <ListItem key={item} text={item} onClick={() => setWork(item)}>
-                {item}
-              </ListItem>
-            ))}
-          </List>
-        </Left>
-        <Right>
-          {work === "Web Design" ? (
-            <WebDesign />
-          ) : work === "Development" ? (
-            <Development />
-          ) : (
-            <ProductDesign />
-          )}
-        </Right>
-      </Container>
-    </Section>
+    <div id="projects">
+      <Section>
+        <Container>
+          <Left>
+            <List>
+              {data.map((item) => (
+                <ListItem key={item} text={item} onClick={() => setWork(item)}>
+                  {item}
+                </ListItem>
+              ))}
+            </List>
+          </Left>
+          <Right>
+            {work === "Web Design" ? (
+              <WebDesign />
+            ) : work === "Development" ? (
+              <Development />
+            ) : (
+              <ProductDesign />
+            )}
+          </Right>
+        </Container>
+      </Section>
+    </div>
   );
 };
 

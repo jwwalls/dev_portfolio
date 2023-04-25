@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
+import { useState, useEffect } from "react";
 const Section = styled.div`
   display: flex;
   justify-content: center;
@@ -16,6 +17,8 @@ const Container = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 10px 0px;
+  position: fixed;
+  z-index: 9999;
 
   @media only screen and (max-width: 768px) {
     width: 100%;
@@ -43,9 +46,32 @@ const List = styled.ul`
   }
 `;
 
-const ListItem = styled.li`
+const ListItem = styled.a`
   cursor: pointer;
+  text-decoration: none;
+  color: white;
+  position: relative;
+
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: white;
+    transition: all 0.3s ease-in-out;
+  }
+
+  &.active:after {
+    width: 100%;
+  }
+
+  &:hover:after {
+    width: 100%;
+  }
 `;
+
 
 const Icons = styled.div`
   display: flex;
@@ -69,22 +95,51 @@ const Button = styled.button`
 `;
 
 const Navbar = () => {
+  const [activeLink, setActiveLink] = useState("");
+
+   const handleClick = (link) => {
+    setActiveLink(link);
+  };
+
   return (
-    <Section>
+    <Section className="home">
       <Container>
         <Links>
-          <Logo src="./img/logo.png" />
+          <Logo src="./img/logos.png" />
           <List>
-            <ListItem>Home</ListItem>
-            <ListItem>Studio</ListItem>
-            <ListItem>Works</ListItem>
-            <ListItem>Contact</ListItem>
+            <ListItem
+              href="#home"
+              onClick={() => handleClick("home")}
+              className={activeLink === "home" ? "active" : ""}
+            >
+              Home
+            </ListItem>
+            <ListItem
+              href="#about"
+              onClick={() => handleClick("about")}
+              className={activeLink === "about" ? "active" : ""}
+            >
+              About
+            </ListItem>
+            <ListItem
+              href="#projects"
+              onClick={() => handleClick("projects")}
+              className={activeLink === "projects" ? "active" : ""}
+            >
+              Projects
+            </ListItem>
+            <ListItem
+              href="#contact"
+              onClick={() => handleClick("contact")}
+              className={activeLink === "contact" ? "active" : ""}
+            >
+              Contact
+            </ListItem>
           </List>
         </Links>
         <Icons>
-          {/* Changed the image due to copyright problems */}
-          <Icon src="./img/search.png" />
-          <Button>Hire Now</Button>
+         
+          <Button>Resume</Button>
         </Icons>
       </Container>
     </Section>
