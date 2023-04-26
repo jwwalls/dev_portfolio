@@ -142,7 +142,7 @@ const Navbar = ({ activeLink, handleClick }) => {
         </Links>
         <Icons>
          
-          <Button href="./img/Jeremie_Walls_Resume.docx" >Resume</Button>
+          <Button href="./img/Jeremie_walls_resume.pdf" target="_blank">Resume</Button>
         </Icons>
       </Container>
     </Section>
