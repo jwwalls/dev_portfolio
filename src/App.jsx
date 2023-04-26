@@ -5,7 +5,6 @@ import Contact from "./components/Contact";
 import Hero from "./components/Hero";
 import Who from "./components/Who";
 import Works from "./components/Works";
-import "./index.css";
 
 const Container = styled.div`
   height: 100vh;
@@ -18,27 +17,30 @@ const Container = styled.div`
   &::-webkit-scrollbar {
     display: none;
   }
+  @media only screen and (max-width: 768px) {
+    
+  }
+  
 `;
 
 function App() {
-  const [activeLink, setActiveLink] = useState("");
+  const [activeLink, setActiveLink] = useState("home");
 
   const handleClick = (link) => {
     setActiveLink(link);
   };
   return (
-
     <Container>
       <Navbar activeLink={activeLink} handleClick={handleClick} />
 
       <div id="home">
-        <Hero handleClick={handleClick}/>
+        <Hero handleClick={handleClick} />
       </div>
       <div id="about">
-        <Who  handleClick={handleClick}/>
+        <Who handleClick={handleClick} />
       </div>
       <div id="projects">
-        <Works  handleClick={handleClick}/>
+        <Works handleClick={handleClick} />
       </div>
       <div id="contact">
         <Contact />

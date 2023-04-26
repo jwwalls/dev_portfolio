@@ -2,16 +2,22 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import ProjectCard from "./ProjectCard";
 
-
 const Section = styled.div`
   height: 100vh;
   scroll-snap-align: center;
   display: flex;
   justify-content: center;
-  position: relative;
+ 
   color: black;
   font-size: 14px;
   font-weight: 300;
+  @media only screen and (max-width: 768px) {
+    height: 200vh;
+    width: 100%;
+    flex-direction: column;
+    scroll-snap-align: none;
+    flex-direction: column;
+  }
 `;
 
 const Container = styled.div`
@@ -21,6 +27,7 @@ const Container = styled.div`
 
   @media only screen and (max-width: 768px) {
     width: 100%;
+    height: 200vh;
     flex-direction: column;
   }
 `;
@@ -30,10 +37,13 @@ const Left = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
+  height: 100vh;
 
   justify-content: center;
 
   @media only screen and (max-width: 768px) {
+   
+    
     padding: 20px;
     justify-content: center;
   }
@@ -44,6 +54,12 @@ const List = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 20px;
+  @media only screen and (max-width: 768px) {
+    
+    
+    
+  }
+  
 `;
 
 const ListItem = styled.li`
@@ -91,6 +107,13 @@ const Right = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+    padding 10px;
+    height: 100%;
+    scroll-snap-align: center;
+    
+  }
 `;
 const Projects = styled.div`
   width: 100%;
@@ -113,8 +136,8 @@ const ProjectBox = styled.div`
 const Button = styled.a`
   display: flex;
   align-self: flex-start;
-  margin-left: 70px;
-  margin-top: 20px;
+  margin-left: 65px;
+  margin-top: 30px;
   align-items: center;
   justify-content: center;
   text-decoration: none;
@@ -128,7 +151,7 @@ const Button = styled.a`
   cursor: pointer;
 `;
 
-const Works = ({handleClick}) => {
+const Works = ({ handleClick }) => {
   const [work, setWork] = useState("");
   const [data, setData] = useState([
     { name: "Data-Structure Visualizer", selected: true },
@@ -148,7 +171,7 @@ const Works = ({handleClick}) => {
           item.selected = false;
         }
       });
-      
+
       return newData;
     });
     setWork(data[index].name);
@@ -156,48 +179,48 @@ const Works = ({handleClick}) => {
   const handleButtonClick = () => {
     handleClick("contact");
   };
-  
+
   return (
-   
-      <Section>
-        <Container>
-          <Left>
-            <List>
-              {data.map((item, index) => (
-                <ListItem
-                  selected={item.selected}
-                  key={item.name}
-                  text={item.name}
-                  onClick={() => handleItemClick(index)}
-                >
-                  {item.name}
-                </ListItem>
-              ))}
-            </List>
-            <Button href="#contact" onClick={handleButtonClick}>Contact Me</Button>
-          </Left>
-          <Right>
-            <Projects>
-              <ProjectBox>
-                {work === "Data-Structure Visualizer" ? (
-                  <ProjectCard projectId="ds-visualizer" />
-                ) : work === "Stock Trading API" ? (
-                  <ProjectCard projectId="e-commerce" />
-                ) : work === "Social Media App" ? (
-                  <ProjectCard projectId="social-media" />
-                ) : work === "Arcade App" ? (
-                  <ProjectCard projectId="arcade" />
-                ) : work === "Flight Tracker App" ? (
-                  <ProjectCard projectId="flight" />
-                ) : (
-                  <ProjectCard projectId="ds-visualizer" />
-                )}
-              </ProjectBox>
-            </Projects>
-          </Right>
-        </Container>
-      </Section>
-   
+    <Section>
+      <Container>
+        <Left>
+          <List>
+            {data.map((item, index) => (
+              <ListItem
+                selected={item.selected}
+                key={item.name}
+                text={item.name}
+                onClick={() => handleItemClick(index)}
+              >
+                {item.name}
+              </ListItem>
+            ))}
+          </List>
+          <Button href="#contact" onClick={handleButtonClick}>
+            Contact Me
+          </Button>
+        </Left>
+        <Right>
+          <Projects>
+            <ProjectBox>
+              {work === "Data-Structure Visualizer" ? (
+                <ProjectCard projectId="ds-visualizer" />
+              ) : work === "Stock Trading API" ? (
+                <ProjectCard projectId="e-commerce" />
+              ) : work === "Social Media App" ? (
+                <ProjectCard projectId="social-media" />
+              ) : work === "Arcade App" ? (
+                <ProjectCard projectId="arcade" />
+              ) : work === "Flight Tracker App" ? (
+                <ProjectCard projectId="flight" />
+              ) : (
+                <ProjectCard projectId="ds-visualizer" />
+              )}
+            </ProjectBox>
+          </Projects>
+        </Right>
+      </Container>
+    </Section>
   );
 };
 

@@ -6,7 +6,7 @@ import { OrbitControls, Sphere, MeshDistortMaterial } from "@react-three/drei";
 
 const Section = styled.div`
   height: 100vh;
-  scroll-snap-align: center;
+ 
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -29,6 +29,7 @@ const Container = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    scroll-snap-align: none;
   }
 `;
 
@@ -42,6 +43,8 @@ const Left = styled.div`
   @media only screen and (max-width: 768px) {
     flex: 1;
     align-items: center;
+    height: 50%;
+    scroll-snap-align: center;
   }
 `;
 
@@ -97,6 +100,8 @@ const Right = styled.div`
   @media only screen and (max-width: 768px) {
     flex: 1;
     width: 100%;
+    height: 50%;
+    scroll-snap-align: center;
   }
 `;
 

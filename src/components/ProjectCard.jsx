@@ -186,7 +186,7 @@ const ProjectCard = ({ projectId }) => {
       <img src={src} alt={name} />
       <Container>
         <Left>
-          <ProjectTitle for="projectDesc">{projectTitle}</ProjectTitle>
+          <ProjectTitle >{projectTitle}</ProjectTitle>
           <ProjectDescription className="projectDesc">
             <Description> Description:</Description>
             <ProjectDescriptionText>

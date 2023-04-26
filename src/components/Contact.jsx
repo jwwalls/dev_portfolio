@@ -6,6 +6,10 @@ import Map from "./Map";
 const Section = styled.div`
   height: 100vh;
   scroll-snap-align: center;
+  @media only screen and (max-width: 768px) {
+    height: 100vh;
+    scroll-snap-align: none;
+  }
 `;
 
 const Container = styled.div`
@@ -23,6 +27,7 @@ const Left = styled.div`
   justify-content: flex-end;
   @media only screen and (max-width: 768px) {
     justify-content: center;
+    scroll-snap-align: center;
   }
 `;
 
@@ -70,6 +75,7 @@ const Right = styled.div`
 
   @media only screen and (max-width: 768px) {
     display: none;
+    
   }
 `;
 
@@ -144,16 +150,16 @@ const Contact = () => {
                   href="https://www.linkedin.com/in/jeremie-walls-046a13152/"
                   target="_blank"
                 >
-                  <img class="bot" src="./img/linkin.png" />
+                  <img  src="./img/linkin.png" />
                 </FooterImg>
                 <FooterImg href="https://github.com/jwwalls" target="_blank">
-                  <img class="bot" src="./img/github.png" />
+                  <img  src="./img/github.png" />
                 </FooterImg>
                 <FooterImg
                   href="https://www.youtube.com/watch?v=kKr9-E7kS6M"
                   target="_blank"
                 >
-                  <img class="bot" src="./img/youtube.png" />
+                  <img  src="./img/youtube.png" />
                 </FooterImg>
               </Footer>
             </Form>

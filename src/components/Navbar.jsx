@@ -97,6 +97,9 @@ const Button = styled.a`
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  @media only screen and (max-width: 768px) {
+    display: none;
+  }
 `;
 const Navbar = ({ activeLink, handleClick }) => {
   
