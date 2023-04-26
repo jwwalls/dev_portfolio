@@ -30,17 +30,16 @@ const Container = styled.div`
   }
 `;
 const Left = styled.div`
-  padding-top: 200px;
-  padding-right: 100px;
-  padding-left: 50px;
-  padding-bottom: 100px;
+  
   flex: 1;
-
+ 
+  width: 50%;
   display: flex;
   align-items: center
   flex-wrap: wrap;
   gap: 10px;
-  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
 
   @media only screen and (max-width: 768px) {
     width: 100%;
@@ -68,7 +67,9 @@ const Right = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 100%;
   gap: 20px;
+  
 
   @media only screen and (max-width: 768px) {
     align-items: center;
@@ -144,15 +145,19 @@ const Box = styled.div`
 const SkillsContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-  width: 100%;
+  height: 500px;
+  width: 600px;
  
+  
+ align-items: center;
+ justify-content: center;
 
   gap: 10px;
 
   @media only screen and (max-width: 768px) {
-    height: 100%;
-    padding: 100px 100px 100px 10px;
-    
+    height: 700px;
+    width: 300px;
+   
 
   }
 `;
