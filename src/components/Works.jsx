@@ -128,7 +128,7 @@ const Button = styled.a`
   cursor: pointer;
 `;
 
-const Works = () => {
+const Works = ({handleClick}) => {
   const [work, setWork] = useState("");
   const [data, setData] = useState([
     { name: "Data-Structure Visualizer", selected: true },
@@ -148,15 +148,17 @@ const Works = () => {
           item.selected = false;
         }
       });
-      console.log(JSON.stringify(newData));
+      
       return newData;
     });
     setWork(data[index].name);
   };
-  
+  const handleButtonClick = () => {
+    handleClick("contact");
+  };
   
   return (
-    <div id="projects">
+   
       <Section>
         <Container>
           <Left>
@@ -172,7 +174,7 @@ const Works = () => {
                 </ListItem>
               ))}
             </List>
-            <Button href="#contact">Contact Me</Button>
+            <Button href="#contact" onClick={handleButtonClick}>Contact Me</Button>
           </Left>
           <Right>
             <Projects>
@@ -195,7 +197,7 @@ const Works = () => {
           </Right>
         </Container>
       </Section>
-    </div>
+   
   );
 };
 

@@ -98,13 +98,8 @@ const Button = styled.a`
   border-radius: 5px;
   cursor: pointer;
 `;
-
-const Navbar = () => {
-  const [activeLink, setActiveLink] = useState("");
-
-   const handleClick = (link) => {
-    setActiveLink(link);
-  };
+const Navbar = ({ activeLink, handleClick }) => {
+  
 
   return (
     <Section className="home">

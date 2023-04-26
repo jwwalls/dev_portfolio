@@ -123,7 +123,7 @@ const Contact = () => {
       );
   };
   return (
-    <div id="contact">
+   
       <Section>
         <Container>
           <Left>
@@ -163,7 +163,7 @@ const Contact = () => {
           </Right>
         </Container>
       </Section>
-    </div>
+  
   );
 };
 

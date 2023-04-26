@@ -1,6 +1,6 @@
 import React, { Suspense } from "react";
 import styled from "styled-components";
-import Navbar from "./Navbar";
+
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Sphere, MeshDistortMaterial } from "@react-three/drei";
 
@@ -124,11 +124,14 @@ const Img = styled.img`
   }
 `;
 
-const Hero = () => {
+const Hero = ({ handleClick }) => {
+  const handleButtonClick = () => {
+    handleClick("about");
+  };
   return (
-    <div id="home">
+   
     <Section>      
-      <Navbar />
+      
       <Container>
         <Left>
           <Title>Hi, I'm Jeremie.</Title>
@@ -139,7 +142,7 @@ const Hero = () => {
           <Desc>
           I thrive on challenges and problem-solving. With a constant thirst for knowledge, I'm always looking for innovative solutions to complex problems. 
           </Desc>
-          <Button href="#about">Learn More</Button>
+          <Button href="#about" onClick={handleButtonClick}>Learn More</Button>
         </Left>
         <Right>
           <Canvas>
@@ -161,7 +164,7 @@ const Hero = () => {
         </Right>
       </Container>
     </Section>
-    </div>
+    
   );
 };
 

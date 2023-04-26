@@ -131,9 +131,13 @@ const SkillsData = [
   { name: "Tailwind", src: "./img/tailwind.png" },
 ];
 
-const Who = () => {
+const Who = ({handleClick}) => {
+  const handleButtonClick = () => {
+    handleClick("projects");
+  };
+
   return (
-    <div id="about">
+   
       <Section className="studio">
         <Container>
           <Left>
@@ -158,11 +162,11 @@ const Who = () => {
               languages and situations, allowing me to quickly learn and apply
               new technologies to meet project requirements.
             </Desc>
-            <Button href="#projects">See My Projects</Button>
+            <Button href="#projects" onClick={handleButtonClick}>See My Projects</Button>
           </Right>
         </Container>
       </Section>
-    </div>
+   
   );
 };
 
