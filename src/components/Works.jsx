@@ -16,7 +16,7 @@ const Section = styled.div`
     width: 100%;
     flex-direction: column;
     scroll-snap-align: none;
-    flex-direction: column;
+    
   }
 `;
 
@@ -42,8 +42,9 @@ const Left = styled.div`
   justify-content: center;
 
   @media only screen and (max-width: 768px) {
-   
-    
+    height: 100%;
+    width: 100%;
+    scroll-snap-align: center;
     padding: 20px;
     justify-content: center;
   }
@@ -109,7 +110,7 @@ const Right = styled.div`
   justify-content: center;
   @media only screen and (max-width: 768px) {
     width: 100%;
-    padding 10px;
+    
     height: 100%;
     scroll-snap-align: center;
     
