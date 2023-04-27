@@ -220,18 +220,22 @@ const projectData = [
   {
     id: "ds-visualizer",
     src: "./img/dsv_ss.PNG",
+    deployed: "https://ds-visual.netlify.app/",
+    code: "https://github.com/jwwalls/DS_Visualizer",
     projectTitle: "Data Structure Visualizer",
     projectDescription:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis impedit sapiente placeat illum doloribus ipsam, ratione sed delectus quia autem aliquid facilis eveniet, mollitia, animi consequatur. Ad labore incidunt dolorem.",
-    technologies: ["JavaScript", "Three.js", "React", "CSS", "HTML"],
+      "A React application that dynamically renders 3-dimensional data structures as the user types in values. This application is a great teaching tool for those new to programming.",
+    technologies: ["JavaScript", "Three.js", "React", "Bootstrap", "CSS", "HTML"],
     challenges:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat veritatis dolore odit sapiente deleniti natus doloremque error ut architecto suscipit dignissimos voluptatum, quas id at, ratione autem pariatur facere porro.",
+      "Refactoring this code from Python/Js into JSX introduced a whole slew of issues, most notably objects not clearing from the scene or being rendered multipile times upon load.",
     lessons:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam blanditiis qui architecto temporibus dolorem distinctio vero soluta praesentium velit aspernatur ad laboriosam excepturi illum saepe nesciunt, rerum consectetur et odit.",
+      "Improved file structure, more efficient use of existing code, dramatically improved react experience. The reason for programming best practices is becoming glaringly obvious as projects get larger. ",
   },
   {
     id: "e-commerce",
     src: "./img/dsv_ss.PNG",
+    deployed: "https://ds-visual.netlify.app/",
+    code: "https://github.com/jwwalls/DS_Visualizer",
     projectTitle: "E-commerce Website",
     projectDescription:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis impedit sapiente placeat illum doloribus ipsam, ratione sed delectus quia autem aliquid facilis eveniet, mollitia, animi consequatur. Ad labore incidunt dolorem.",
@@ -244,6 +248,8 @@ const projectData = [
   {
     id: "social-media",
     src: "./img/dsv_ss.PNG",
+    deployed: "https://ds-visual.netlify.app/",
+    code: "https://github.com/jwwalls/DS_Visualizer",
     projectTitle: "Social Media App",
     projectDescription:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis impedit sapiente placeat illum doloribus ipsam, ratione sed delectus quia autem aliquid facilis eveniet, mollitia, animi consequatur. Ad labore incidunt dolorem.",
@@ -256,6 +262,8 @@ const projectData = [
   {
     id: "arcade",
     src: "./img/dsv_ss.PNG",
+    deployed: "https://ds-visual.netlify.app/",
+    code: "https://github.com/jwwalls/DS_Visualizer",
     projectTitle: "Arcade App",
     projectDescription:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis impedit sapiente placeat illum doloribus ipsam, ratione sed delectus quia autem aliquid facilis eveniet, mollitia, animi consequatur. Ad labore incidunt dolorem.",
@@ -266,16 +274,18 @@ const projectData = [
       "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam blanditiis qui architecto temporibus dolorem distinctio vero soluta praesentium velit aspernatur ad laboriosam excepturi illum saepe nesciunt, rerum consectetur et odit.",
   },
   {
-    id: "flight",
-    src: "./img/dsv_ss.PNG",
-    projectTitle: "Flight Tracker App",
+    id: "legacy",
+    src: "./img/dsv.png",
+    deployed: "https://youtu.be/kKr9-E7kS6M",
+    code: "https://github.com/jwwalls/final_project",
+    projectTitle: "Legacy Visualizer",
     projectDescription:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis impedit sapiente placeat illum doloribus ipsam, ratione sed delectus quia autem aliquid facilis eveniet, mollitia, animi consequatur. Ad labore incidunt dolorem.",
-    technologies: ["React", "Redux", "Node.js", "Express.js"],
+      "A Web Application that allows users to visualize data structures. Users can select sample datasets, upload csv files, or type in the  values to be displayed. Flask was used for routing and server-side calucaltion of data.",
+    technologies: ["Javascript", "Python", "Flask", "Three.js", "Bootstrap", "HTML", "CSS"],
     challenges:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat veritatis dolore odit sapiente deleniti natus doloremque error ut architecto suscipit dignissimos voluptatum, quas id at, ratione autem pariatur facere porro.",
+      "Struggled with poor design decisions at the beginning of the project. Started teaching myself Three.js half way through this project because I wasnt satisfied with the visuals. Unable to get site deployed.",
     lessons:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam blanditiis qui architecto temporibus dolorem distinctio vero soluta praesentium velit aspernatur ad laboriosam excepturi illum saepe nesciunt, rerum consectetur et odit.",
+      "Definitely my most enlighting lesson so far, over complicated design, not reusing existing code(css, javascript), not planning enough. I chose to rebuild this App in React.",
   },
 ];
 
@@ -288,20 +298,22 @@ const ProjectCard = ({ projectId }) => {
     challenges,
     lessons,
     src,
+    deployed,
+    code,
   } = project;
 
   return (
     <Card>
-      <img src={src} alt={name} />
+      <img src={src} alt={projectTitle} />
       <Container>
         <ProjectHeader>
       <ProjectTitle >{projectTitle}</ProjectTitle>
       <Buttons>
-            <Button href="https://ds-visual.netlify.app/" target="_blank">
+            <Button href={deployed} target="_blank">
               Deployed
             </Button>
             <Button
-              href="https://github.com/jwwalls/DS_Visualizer"
+              href={code}
               target="_blank"
             >
               Code

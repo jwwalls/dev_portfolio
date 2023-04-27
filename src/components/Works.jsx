@@ -178,7 +178,7 @@ const Works = ({ handleClick }) => {
     { name: "Stock Trading API", selected: false },
     { name: "Social Media App", selected: false },
     { name: "Arcade App", selected: false },
-    { name: "Flight Tracker App", selected: false },
+    { name: "Legacy Visualizer", selected: false },
   ]);
 
   const handleItemClick = (index) => {
@@ -232,8 +232,8 @@ const Works = ({ handleClick }) => {
                 <ProjectCard projectId="social-media" />
               ) : work === "Arcade App" ? (
                 <ProjectCard projectId="arcade" />
-              ) : work === "Flight Tracker App" ? (
-                <ProjectCard projectId="flight" />
+              ) : work === "Legacy Visualizer" ? (
+                <ProjectCard projectId="legacy" />
               ) : (
                 <ProjectCard projectId="ds-visualizer" />
               )}
