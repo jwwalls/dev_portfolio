@@ -10,7 +10,6 @@ const Card = styled.div`
   width: 100%;
   height: 100%;
  
-
   border-radius: 17px;
 
   img {
@@ -24,13 +23,24 @@ const Container = styled.div`
   border-top: 2px solid #af40ff;
   border-radius: 0px 0px 17px 17px;
   display: flex;
+  flex-direction: column;
+`;
+
+
+const ProjectHeader = styled.section`
+  display: flex;
+  justify-content: center;
+  
+  height: 20%;
 `;
 const Left = styled.div`
   width: 50%;
   display: flex;
+  height: 100%;
   flex-direction: column;
+  
   @media only screen and (max-width: 768px) {
-    gap: 20px;
+    gap: 5px;
     margin: 0px;
     height: 80%;
     padding: 10px;
@@ -44,20 +54,23 @@ const ProjectTitle = styled.div`
   align-items: center;
   justify-content: center;
   font-size: 30px;
-  height: 20%;
+  width: 50%;
+ 
   @media only screen and (max-width: 768px) {
     margin: 0px;
     font-size: 20px;
-    height: 30%;
+    
+   
     
   }
 `;
 const ProjectDescription = styled.label`
-  height: 40%;
+  height: 50%;
   font-size: 20px;
   @media only screen and (max-width: 768px) {
     margin: 0px;
     height: auto;
+    font-size: auto;
     
   }
 `;
@@ -76,13 +89,13 @@ const ProjectDescriptionText = styled.div`
   @media only screen and (max-width: 768px) {
     margin: 0px;
     padding: 0px;
-    font-size: 15px;
+    font-size: 14px;
     
     
   }
 `;
 const Technologies = styled.div`
-  height: 40%;
+  height: 50%;
   @media only screen and (max-width: 768px) {
     margin: 0px;
    display: none;
@@ -98,15 +111,19 @@ const Techs = styled.li``;
 
 const Right = styled.div`
   width: 50%;
+  
 
   
   @media only screen and (max-width: 768px) {
+    gap: 5px;
     margin: 0px;
-    height: 100%;
+    height: 80%;
+    padding: 10px;
+    
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    margin:0px;  
+    
+      
   }
 `;
 
@@ -114,12 +131,16 @@ const Buttons = styled.div`
   display: flex;
   justify-content: center;
   gap: 50px;
-  height: 20%;
+  width: 40%;
+  padding-left: 5%;
+  padding-right 5%;
+ 
   align-items: center;
   @media only screen and (max-width: 768px) {
     gap: 10px;
-    flex-direction: column;
+    
     margin-bottom: 0px;
+    width: 30%;
    
     
   }
@@ -139,13 +160,14 @@ const Button = styled.a`
   cursor: pointer;
   @media only screen and (max-width: 768px) {
     margin: 0px;
-   height: 5%;
+    
+   
     
   }
 `;
 
 const Challenges = styled.div`
-  height: 40%;
+  height: 50%;
   @media only screen and (max-width: 768px) {
     margin: 0px;
    display: none;
@@ -160,7 +182,7 @@ const ChallengesText = styled.div`
   font-size: 15px;
 `;
 const Lessons = styled.div`
-  height: 40%;
+  height: 50%;
   @media only screen and (max-width: 768px) {
     margin: 0px;
    display: none;
@@ -172,6 +194,13 @@ const LessonsText = styled.div`
   padding-left: 20px;
   padding-right: 20px;
   font-size: 15px;
+`;
+
+const DescriptionsSection = styled.section`
+display: flex;
+height: 100%;
+
+
 `;
 
 const MobileTechnologies = styled.ul`
@@ -265,8 +294,23 @@ const ProjectCard = ({ projectId }) => {
     <Card>
       <img src={src} alt={name} />
       <Container>
+        <ProjectHeader>
+      <ProjectTitle >{projectTitle}</ProjectTitle>
+      <Buttons>
+            <Button href="https://ds-visual.netlify.app/" target="_blank">
+              Deployed
+            </Button>
+            <Button
+              href="https://github.com/jwwalls/DS_Visualizer"
+              target="_blank"
+            >
+              Code
+            </Button>
+          </Buttons>
+      </ProjectHeader>
+      <DescriptionsSection>
         <Left>
-          <ProjectTitle >{projectTitle}</ProjectTitle>
+         
           <ProjectDescription className="projectDesc">
             <Description> Description:</Description>
             <ProjectDescriptionText>
@@ -283,17 +327,7 @@ const ProjectCard = ({ projectId }) => {
           </Technologies>
         </Left>
         <Right>
-          <Buttons>
-            <Button href="https://ds-visual.netlify.app/" target="_blank">
-              Deployed
-            </Button>
-            <Button
-              href="https://github.com/jwwalls/DS_Visualizer"
-              target="_blank"
-            >
-              Code
-            </Button>
-          </Buttons>
+          
           <Challenges>
             <Description>Challenges:</Description>
             <ChallengesText>{challenges}</ChallengesText>
@@ -303,7 +337,7 @@ const ProjectCard = ({ projectId }) => {
             <LessonsText>{lessons}</LessonsText>
           </Lessons>
           <MobileTechnologies>
-            <Description> Technolgies Used:</Description>
+            <Description> Technolgies:</Description>
             <TechnoList>
               {technologies.map((tech, index) => (
                 <Techs key={index}>{tech}</Techs>
@@ -311,6 +345,7 @@ const ProjectCard = ({ projectId }) => {
             </TechnoList>
           </MobileTechnologies>
         </Right>
+        </DescriptionsSection>
       </Container>
     </Card>
   );
