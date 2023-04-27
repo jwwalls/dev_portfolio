@@ -121,7 +121,7 @@ const Projects = styled.div`
   background-image: linear-gradient(144deg, #af40ff, #5b42f3 50%, #da4ea2);
   @media only screen and (max-width: 768px) {
     width: 80%;
-    margin-top: 80px;
+    
   }
 `;
 const ProjectBox = styled.div`
