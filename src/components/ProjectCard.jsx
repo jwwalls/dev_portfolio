@@ -246,25 +246,25 @@ const projectData = [
       "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam blanditiis qui architecto temporibus dolorem distinctio vero soluta praesentium velit aspernatur ad laboriosam excepturi illum saepe nesciunt, rerum consectetur et odit.",
   },
   {
-    id: "social-media",
-    src: "./img/dsv_ss.PNG",
-    deployed: "https://ds-visual.netlify.app/",
-    code: "https://github.com/jwwalls/DS_Visualizer",
-    projectTitle: "Social Media App",
+    id: "coffee",
+    src: "./img/coffee.PNG",
+    deployed: "https://jwwcoffe.netlify.app",
+    code: "https://github.com/jwwalls/coffee_clicker",
+    projectTitle: "Coffee Clicker",
     projectDescription:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis impedit sapiente placeat illum doloribus ipsam, ratione sed delectus quia autem aliquid facilis eveniet, mollitia, animi consequatur. Ad labore incidunt dolorem.",
-    technologies: ["React", "Redux", "Node.js", "Express.js"],
+    technologies: ["React", "Javascript", "Node.js", "HTML", "CSS"],
     challenges:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat veritatis dolore odit sapiente deleniti natus doloremque error ut architecto suscipit dignissimos voluptatum, quas id at, ratione autem pariatur facere porro.",
     lessons:
       "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam blanditiis qui architecto temporibus dolorem distinctio vero soluta praesentium velit aspernatur ad laboriosam excepturi illum saepe nesciunt, rerum consectetur et odit.",
   },
   {
-    id: "arcade",
-    src: "./img/dsv_ss.PNG",
-    deployed: "https://ds-visual.netlify.app/",
-    code: "https://github.com/jwwalls/DS_Visualizer",
-    projectTitle: "Arcade App",
+    id: "things",
+    src: "./img/things.PNG",
+    deployed: "https://stranger-things-jj.netlify.app",
+    code: "https://github.com/jwwalls/Stranger",
+    projectTitle: "Strangers Things",
     projectDescription:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis impedit sapiente placeat illum doloribus ipsam, ratione sed delectus quia autem aliquid facilis eveniet, mollitia, animi consequatur. Ad labore incidunt dolorem.",
     technologies: ["React", "Redux", "Node.js", "Express.js"],

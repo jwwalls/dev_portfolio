@@ -110,6 +110,9 @@ const Button = styled.a`
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  img{
+    padding: 5px;
+  }
   @media only screen and (max-width: 768px) {
     display: none;
   }
@@ -155,7 +158,7 @@ const Navbar = ({ activeLink, handleClick }) => {
         </Links>
         <Icons>
          
-          <Button href="./img/Jeremie_walls_resume.pdf" target="_blank">Resume</Button>
+          <Button href="./img/Jeremie_walls_resume.pdf" target="_blank">Resume <img src="./img/download.png" alt="" /></Button>
         </Icons>
       </Container>
     </Section>

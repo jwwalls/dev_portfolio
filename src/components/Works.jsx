@@ -176,8 +176,8 @@ const Works = ({ handleClick }) => {
   const [data, setData] = useState([
     { name: "Data-Structure Visualizer", selected: true },
     { name: "Stock Trading API", selected: false },
-    { name: "Social Media App", selected: false },
-    { name: "Arcade App", selected: false },
+    { name: "Coffee Clicker", selected: false },
+    { name: "Craigslist-like App", selected: false },
     { name: "Legacy Visualizer", selected: false },
   ]);
 
@@ -228,10 +228,10 @@ const Works = ({ handleClick }) => {
                 <ProjectCard projectId="ds-visualizer" />
               ) : work === "Stock Trading API" ? (
                 <ProjectCard projectId="e-commerce" />
-              ) : work === "Social Media App" ? (
-                <ProjectCard projectId="social-media" />
-              ) : work === "Arcade App" ? (
-                <ProjectCard projectId="arcade" />
+              ) : work === "Coffee Clicker" ? (
+                <ProjectCard projectId="coffee" />
+              ) : work === "Craigslist-like App" ? (
+                <ProjectCard projectId="things" />
               ) : work === "Legacy Visualizer" ? (
                 <ProjectCard projectId="legacy" />
               ) : (
