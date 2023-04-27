@@ -152,7 +152,7 @@ const Hero = ({ handleClick }) => {
         <Right>
           <Canvas>
             <Suspense fallback={null}>
-              <OrbitControls enableZoom={false} />
+            
               <ambientLight intensity={1} />
               <directionalLight position={[3, 2, 1]} />
               <Sphere args={[1, 100, 200]} scale={2.4}>

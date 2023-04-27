@@ -2,26 +2,25 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import ProjectCard from "./ProjectCard";
 
-const Section = styled.div`
+const Section = styled.section`
   height: 100vh;
   scroll-snap-align: center;
   display: flex;
   justify-content: center;
- 
+
   color: black;
   font-size: 14px;
   font-weight: 300;
   @media only screen and (max-width: 768px) {
     height: 200vh;
-    width: 100%;
+    width: auto;
     flex-direction: column;
     scroll-snap-align: none;
-    
   }
 `;
 
 const Container = styled.div`
-  width: 1400px;
+  width: 100%;
   display: flex;
   justify-content: space-between;
 
@@ -36,17 +35,19 @@ const Left = styled.div`
   flex: 1;
   display: flex;
   align-items: center;
+  
   flex-direction: column;
-  height: 100vh;
-
+  height: 100%;
+ 
   justify-content: center;
+ 
 
   @media only screen and (max-width: 768px) {
     height: 100%;
     width: 100%;
     scroll-snap-align: center;
-    padding: 20px;
-    justify-content: center;
+
+    gap: 20px;
   }
 `;
 
@@ -56,11 +57,7 @@ const List = styled.ul`
   flex-direction: column;
   gap: 20px;
   @media only screen and (max-width: 768px) {
-    
-    
-    
   }
-  
 `;
 
 const ListItem = styled.li`
@@ -110,20 +107,22 @@ const Right = styled.div`
   justify-content: center;
   @media only screen and (max-width: 768px) {
     width: 100%;
-    
-    height: 100%;
+
+    height: 50%;
     scroll-snap-align: center;
-    
   }
 `;
 const Projects = styled.div`
-  width: 100%;
-
-  height: 700px;
+  width: 80%;
+  height: 80%;
   border-radius: 20px;
   padding: 5px;
   box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
   background-image: linear-gradient(144deg, #af40ff, #5b42f3 50%, #da4ea2);
+  @media only screen and (max-width: 768px) {
+    width: 80%;
+    margin-top: 80px;
+  }
 `;
 const ProjectBox = styled.div`
   display: flex;
@@ -133,12 +132,15 @@ const ProjectBox = styled.div`
   border-radius: 17px;
   width: 100%;
   height: 100%;
+  @media only screen and (max-width: 768px) {
+    margin: 0px;
+    width: 100%;
+  }
 `;
 const Button = styled.a`
   display: flex;
   align-self: flex-start;
-  margin-left: 65px;
-  margin-top: 30px;
+
   align-items: center;
   justify-content: center;
   text-decoration: none;
@@ -150,6 +152,23 @@ const Button = styled.a`
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  @media only screen and (max-width: 768px) {
+    margin: 0px;
+    display: none;
+  }
+`;
+
+const ProjectMobile = styled.h1`
+  display: none;
+
+  @media only screen and (max-width: 768px) {
+    display: block;
+    font-size: 40px;
+    color: white;
+    width: 300px;
+    border-bottom: 3px solid white;
+    align-self: center;
+  }
 `;
 
 const Works = ({ handleClick }) => {
@@ -185,6 +204,7 @@ const Works = ({ handleClick }) => {
     <Section>
       <Container>
         <Left>
+          <ProjectMobile>Project Selector</ProjectMobile>
           <List>
             {data.map((item, index) => (
               <ListItem
@@ -196,10 +216,10 @@ const Works = ({ handleClick }) => {
                 {item.name}
               </ListItem>
             ))}
+            <Button href="#contact" onClick={handleButtonClick}>
+              Contact Me
+            </Button>
           </List>
-          <Button href="#contact" onClick={handleButtonClick}>
-            Contact Me
-          </Button>
         </Left>
         <Right>
           <Projects>

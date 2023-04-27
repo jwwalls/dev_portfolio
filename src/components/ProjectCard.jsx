@@ -1,5 +1,4 @@
-import { OrbitControls, Stage } from "@react-three/drei";
-import { Canvas } from "@react-three/fiber";
+
 import React, { Suspense } from "react";
 import styled from "styled-components";
 
@@ -10,6 +9,7 @@ const Card = styled.div`
   color: white;
   width: 100%;
   height: 100%;
+ 
 
   border-radius: 17px;
 
@@ -29,6 +29,14 @@ const Left = styled.div`
   width: 50%;
   display: flex;
   flex-direction: column;
+  @media only screen and (max-width: 768px) {
+    gap: 20px;
+    margin: 0px;
+    height: 80%;
+    padding: 10px;
+   
+    
+  }
 `;
 
 const ProjectTitle = styled.div`
@@ -37,10 +45,21 @@ const ProjectTitle = styled.div`
   justify-content: center;
   font-size: 30px;
   height: 20%;
+  @media only screen and (max-width: 768px) {
+    margin: 0px;
+    font-size: 20px;
+    height: 30%;
+    
+  }
 `;
 const ProjectDescription = styled.label`
   height: 40%;
   font-size: 20px;
+  @media only screen and (max-width: 768px) {
+    margin: 0px;
+    height: auto;
+    
+  }
 `;
 
 const Description = styled.div`
@@ -54,9 +73,22 @@ const ProjectDescriptionText = styled.div`
   font-size: 15px;
   padding-right: 20px;
   padding-left: 20px;
+  @media only screen and (max-width: 768px) {
+    margin: 0px;
+    padding: 0px;
+    font-size: 15px;
+    
+    
+  }
 `;
 const Technologies = styled.div`
   height: 40%;
+  @media only screen and (max-width: 768px) {
+    margin: 0px;
+   display: none;
+    
+  }
+  
 `;
 const TechnoList = styled.ul`
   padding-left: 40px;
@@ -66,6 +98,16 @@ const Techs = styled.li``;
 
 const Right = styled.div`
   width: 50%;
+
+  
+  @media only screen and (max-width: 768px) {
+    margin: 0px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin:0px;  
+  }
 `;
 
 const Buttons = styled.div`
@@ -74,6 +116,13 @@ const Buttons = styled.div`
   gap: 50px;
   height: 20%;
   align-items: center;
+  @media only screen and (max-width: 768px) {
+    gap: 10px;
+    flex-direction: column;
+    margin-bottom: 0px;
+   
+    
+  }
 `;
 const Button = styled.a`
   text-decoration: none;
@@ -81,17 +130,29 @@ const Button = styled.a`
   align-items: center;
   justify-content: center;
   font-weight: 400;
-  width: 100px;
+  width: 50%;
   padding: 10px;
   background-color: #da4ea2;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  @media only screen and (max-width: 768px) {
+    margin: 0px;
+   height: 5%;
+    
+  }
 `;
 
 const Challenges = styled.div`
   height: 40%;
+  @media only screen and (max-width: 768px) {
+    margin: 0px;
+   display: none;
+   
+    
+  }
+  
 `;
 const ChallengesText = styled.div`
   padding-left: 20px;
@@ -100,11 +161,30 @@ const ChallengesText = styled.div`
 `;
 const Lessons = styled.div`
   height: 40%;
+  @media only screen and (max-width: 768px) {
+    margin: 0px;
+   display: none;
+    
+  }
+  
 `;
 const LessonsText = styled.div`
   padding-left: 20px;
   padding-right: 20px;
   font-size: 15px;
+`;
+
+const MobileTechnologies = styled.ul`
+display:none;
+
+@media only screen and (max-width: 768px) {
+  
+  height: 80%;
+  display: block;
+  margin-top: 
+
+  
+}
 `;
 
 const projectData = [
@@ -222,6 +302,14 @@ const ProjectCard = ({ projectId }) => {
             <Description>Lessons Learned:</Description>
             <LessonsText>{lessons}</LessonsText>
           </Lessons>
+          <MobileTechnologies>
+            <Description> Technolgies Used:</Description>
+            <TechnoList>
+              {technologies.map((tech, index) => (
+                <Techs key={index}>{tech}</Techs>
+              ))}
+            </TechnoList>
+          </MobileTechnologies>
         </Right>
       </Container>
     </Card>

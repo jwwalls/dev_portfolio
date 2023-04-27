@@ -30,10 +30,23 @@ const Links = styled.div`
   display: flex;
   align-items: center;
   gap: 50px;
+  @media only screen and (max-width: 768px) {
+    margin: 0px;
+   display: flex;
+   width: 100%;
+  
+    
+  }
 `;
 
 const Logo = styled.img`
   height: 50px;
+  @media only screen and (max-width: 768px) {
+
+    height: 40px;
+    padding-left: 10px;
+    
+  }
 `;
 
 const List = styled.ul`
@@ -148,5 +161,5 @@ const Navbar = ({ activeLink, handleClick }) => {
     </Section>
   );
 };
-
+ 
 export default Navbar;

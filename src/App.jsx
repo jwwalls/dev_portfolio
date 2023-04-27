@@ -11,6 +11,7 @@ const Container = styled.div`
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
   overflow-y: auto;
+  overflow-x: auto;
   scrollbar-width: none;
   color: white;
   background: url("./img/bg.jpeg");
@@ -18,7 +19,8 @@ const Container = styled.div`
     display: none;
   }
   @media only screen and (max-width: 768px) {
-    
+    overflow-x: hidden;
+    width: 100%;
   }
   
 `;

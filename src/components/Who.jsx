@@ -59,6 +59,7 @@ const Title = styled.h1`
 
   @media only screen and (max-width: 768px) {
     font-size: 60px;
+    marigin-bottom: 15px;
   }
 `;
 
@@ -69,7 +70,6 @@ const Right = styled.div`
   justify-content: center;
   width: 100%;
   gap: 20px;
-  
 
   @media only screen and (max-width: 768px) {
     align-items: center;
@@ -77,12 +77,13 @@ const Right = styled.div`
 
     width: 100%;
     height: 50%;
-    gap: 0px;
+
+    gap: 20px;
     scroll-snap-align: center;
   }
 `;
 
-const WhatWeDo = styled.div`
+const WhatIDo = styled.div`
   display: flex;
   align-items: center;
   gap: 10px;
@@ -99,6 +100,11 @@ const Subtitle = styled.h2`
 const Desc = styled.p`
   font-size: 24px;
   color: lightgray;
+  @media only screen and (max-width: 768px) {
+    margin: 0px;
+    padding: 10px;
+    
+  }
 `;
 
 const Button = styled.a`
@@ -121,7 +127,7 @@ const Skills = styled.div`
   background-image: linear-gradient(144deg, #af40ff, #5b42f3 50%, #da4ea2);
 
   @media only screen and (max-width: 768px) {
-    width: 60px;
+    width: 70px;
     height: 90px;
   }
 `;
@@ -138,7 +144,7 @@ const Box = styled.div`
   img {
     height: 60px;
     @media only screen and (max-width: 768px) {
-      height: 30px;
+      height: 45px;
     }
   }
 `;
@@ -147,24 +153,33 @@ const SkillsContainer = styled.div`
   flex-wrap: wrap;
   height: 500px;
   width: 600px;
- 
-  
- align-items: center;
- justify-content: center;
+
+  align-items: center;
+  justify-content: center;
 
   gap: 10px;
 
   @media only screen and (max-width: 768px) {
-    height: 700px;
+    height: 600px;
     width: 300px;
-   
-
   }
 `;
 
 const Name = styled.div`
   color: white;
   margin-top: 5px;
+  @media only screen and (max-width: 768px) {
+    font-size: 12px;
+  }
+`;
+const SkillsMobile = styled.div`
+  display: none;
+  @media only screen and (max-width: 768px) {
+    display: block;
+    font-size: 20px
+    padding: 10px;
+  }
+
 `;
 
 const SkillsData = [
@@ -194,6 +209,8 @@ const Who = ({ handleClick }) => {
     <Section className="studio">
       <Container>
         <Left>
+          {" "}
+          <SkillsMobile>Technologies</SkillsMobile>
           <SkillsContainer>
             {SkillsData.map((skill, index) => (
               <Skills key={index}>
@@ -207,10 +224,10 @@ const Who = ({ handleClick }) => {
         </Left>
         <Right>
           <Title>Fullstack Developer</Title>
-          <WhatWeDo>
+          <WhatIDo>
             <Line src="./img/line.png" />
             <Subtitle>What I Do</Subtitle>
-          </WhatWeDo>
+          </WhatIDo>
           <Desc>
             Confident in my abilities to handle both front-end and back-end
             development tasks. I have a strong proficiency in adapting to new
