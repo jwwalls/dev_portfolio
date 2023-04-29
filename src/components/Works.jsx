@@ -35,12 +35,11 @@ const Left = styled.div`
   flex: 1;
   display: flex;
   align-items: center;
-  
+
   flex-direction: column;
   height: 100%;
- 
+
   justify-content: center;
- 
 
   @media only screen and (max-width: 768px) {
     height: 100%;
@@ -121,7 +120,6 @@ const Projects = styled.div`
   background-image: linear-gradient(144deg, #af40ff, #5b42f3 50%, #da4ea2);
   @media only screen and (max-width: 768px) {
     width: 80%;
-    
   }
 `;
 const ProjectBox = styled.div`
@@ -170,6 +168,10 @@ const ProjectMobile = styled.h1`
     align-self: center;
   }
 `;
+const ProjectMobileScroll = styled.div`
+  scroll-snap-align: bottom;
+
+`;
 
 const Works = ({ handleClick }) => {
   const [work, setWork] = useState("");
@@ -195,6 +197,10 @@ const Works = ({ handleClick }) => {
       return newData;
     });
     setWork(data[index].name);
+    if (window.innerWidth < 768) {
+      const mobileDiv = document.getElementById('mobile');
+      mobileDiv.scrollIntoView({ behavior: 'smooth' });
+    }
   };
   const handleButtonClick = () => {
     handleClick("contact");
@@ -220,8 +226,9 @@ const Works = ({ handleClick }) => {
               Contact Me
             </Button>
           </List>
-        </Left>
+        </Left> <ProjectMobileScroll id="mobile"></ProjectMobileScroll>
         <Right>
+         
           <Projects>
             <ProjectBox>
               {work === "Data-Structure Visualizer" ? (
