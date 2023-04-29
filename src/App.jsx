@@ -27,26 +27,24 @@ const Container = styled.div`
 
 function App() {
   const [activeLink, setActiveLink] = useState("home");
-
   const handleClick = (link) => {
     setActiveLink(link);
   };
   return (
     <Container>
       <Navbar activeLink={activeLink} handleClick={handleClick} />
-
-      <div id="home">
+      <section id="home">
         <Hero handleClick={handleClick} />
-      </div>
-      <div id="about">
+      </section>
+      <section id="about">
         <Who handleClick={handleClick} />
-      </div>
-      <div id="projects">
+      </section>
+      <section id="projects">
         <Works handleClick={handleClick} />
-      </div>
-      <div id="contact">
+      </section>
+      <section id="contact">
         <Contact />
-      </div>
+      </section>
     </Container>
   );
 }

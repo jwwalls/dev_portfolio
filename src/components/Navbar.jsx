@@ -158,7 +158,7 @@ const Navbar = ({ activeLink, handleClick }) => {
         </Links>
         <Icons>
          
-          <Button href="./img/Jeremie_walls_resume.pdf" target="_blank">Resume <img src="./img/download.png" alt="" /></Button>
+          <Button href="./img/Jeremie_Walls_Resume.docx" target="_blank">Resume <img src="./img/download.png" alt="" /></Button>
         </Icons>
       </Container>
     </Section>
