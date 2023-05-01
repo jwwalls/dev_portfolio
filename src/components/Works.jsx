@@ -62,7 +62,7 @@ const List = styled.ul`
 `;
 
 const ListItem = styled.li`
-  font-size: 40px;
+  font-size: 50px;
   font-weight: bold;
   cursor: pointer;
 

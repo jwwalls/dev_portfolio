@@ -12,18 +12,21 @@ const Section = styled.div`
 
 const Container = styled.div`
 
-
-  width: 80%;
+background-color: #161616;
+  width: 100%;
+  height: 3%;  
+  
   display: flex;
   justify-content: space-between;
 
-  padding: 10px 0px;
+  padding: 20px  ;
   position: fixed;
   z-index: 9999;
 
   @media only screen and (max-width: 768px) {
     width: 100%;
     padding: 10px;
+    background-color: transparent;
   }
 `;
 
@@ -31,6 +34,8 @@ const Links = styled.div`
   display: flex;
   align-items: center;
   gap: 25px;
+  padding-left: 10%;
+  
  
   
   @media only screen and (max-width: 768px) {
@@ -98,6 +103,12 @@ const Icons = styled.div`
   display: flex;
   align-items: center;
   gap: 20px;
+  padding-right: 10%;
+  @media only screen and (max-width: 768px) {
+    padding-right: 0px;
+    padding-top: 15px;
+    margin: 15px;
+  }
 `;
 
 const Icon = styled.img`
@@ -112,6 +123,7 @@ const Icon = styled.img`
 `;
 const LogoMobile = styled.img`
   height: 50px;
+  margin: 10px;
 
   @media only screen and (max-width: 768px) {
     display: block;
@@ -131,6 +143,7 @@ const Button = styled.a`
   justify-content: center;
   font-weight: 400;
   width: 100px;
+  height: 15px;
   padding: 10px;
   background-color: #da4ea2;
   color: white;

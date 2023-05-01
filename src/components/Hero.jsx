@@ -159,7 +159,7 @@ const Hero = ({ handleClick }) => {
             
               <ambientLight intensity={1} />
               <directionalLight position={[3, 2, 1]} />
-              <Sphere args={[1, 100, 200]} scale={2.4}>
+              <Sphere args={[1, 100, 200]} scale={2.0}>
                 <MeshDistortMaterial
                   color="#3d1c56"
                   attach="material"

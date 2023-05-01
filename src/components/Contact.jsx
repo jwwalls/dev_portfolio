@@ -19,7 +19,6 @@ const Container = styled.div`
   height: 100%;
   display: flex;  
 
-
 `;
 
 const Left = styled.div`
@@ -32,6 +31,7 @@ const Left = styled.div`
   @media only screen and (max-width: 768px) {
     justify-content: center;
     scroll-snap-align: center;
+    margin-left: 0%;
   }
 `;
 
