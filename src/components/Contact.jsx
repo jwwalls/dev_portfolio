@@ -5,7 +5,9 @@ import Map from "./Map";
 
 const Section = styled.div`
   height: 100vh;
-
+  display : flex;
+  align-items: center;
+  justify-content: center;
   @media only screen and (max-width: 768px) {
     height: 100vh;
     scroll-snap-align: none;
@@ -15,16 +17,18 @@ const Section = styled.div`
 const Container = styled.div`
   width: 100%;
   height: 100%;
-  display: flex;
-  justify-content: space-between;
-  gap: 50px;
+  display: flex;  
+
+
 `;
 
 const Left = styled.div`
   flex: 1;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  margin-left: 10%;
+  
+ 
   @media only screen and (max-width: 768px) {
     justify-content: center;
     scroll-snap-align: center;
@@ -51,6 +55,7 @@ const Input = styled.input`
   background-color: #e8e6e6;
   border: none;
   border-radius: 5px;
+  font-size: 16px;
 `;
 
 const TextArea = styled.textarea`
@@ -97,7 +102,7 @@ const FooterImg = styled.a`
   }
 
   :hover {
-    box-shadow: 0px 0px 0px 2px rgba(255, 0, 255, 0.8);
+    box-shadow: 0 0 1px 2px rgba(255, 0, 255, 0.8);
   }
 `;
 
@@ -109,12 +114,24 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+  
+    // Check if any form field is empty
+    const form = ref.current;
+    const name = form.name.value;
+    const email = form.email.value;
+    const message = form.message.value;
+  
+    if (!name || !email || !message) {
+      // If any field is empty, display an error message
+      alert("Please fill in all fields.");
+      return;
+    }
+  
     emailjs
       .sendForm(
         "service_c6p7507",
         "template_9x4ekec",
-        ref.current,
+        form,
         "0vaM2ygpvxuEJMGg-"
       )
       .then(
@@ -128,6 +145,7 @@ const Contact = () => {
         }
       );
   };
+  
   return (
    
       <Section>

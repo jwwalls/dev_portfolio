@@ -1,21 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
-import { useState, useEffect } from "react";
 const Section = styled.div`
   display: flex;
   justify-content: center;
-
+  
   @media only screen and (max-width: 768px) {
     width: 100%;
   }
 `;
 
 const Container = styled.div`
+
+
   width: 80%;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+
   padding: 10px 0px;
   position: fixed;
   z-index: 9999;
@@ -29,23 +30,28 @@ const Container = styled.div`
 const Links = styled.div`
   display: flex;
   align-items: center;
-  gap: 50px;
-  @media only screen and (max-width: 768px) {
-    margin: 0px;
-   display: flex;
-   width: 100%;
+  gap: 25px;
+ 
   
-    
+  @media only screen and (max-width: 768px) {
+    flex-direction: column;
+    gap: 10px;
+    margin: 0;
+    display: ${({ menuOpen }) => (menuOpen ? "flex" : "none")};
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #333333;
+    padding: 10px;
   }
 `;
-
 const Logo = styled.img`
   height: 50px;
   @media only screen and (max-width: 768px) {
-
     height: 40px;
     padding-left: 10px;
-    
+    display: none;
   }
 `;
 
@@ -59,7 +65,10 @@ const List = styled.ul`
   }
 `;
 
-const ListItem = styled.a`
+
+
+
+const ListItemMobile = styled.a`
   cursor: pointer;
   text-decoration: none;
   color: white;
@@ -85,7 +94,6 @@ const ListItem = styled.a`
   }
 `;
 
-
 const Icons = styled.div`
   display: flex;
   align-items: center;
@@ -95,12 +103,31 @@ const Icons = styled.div`
 const Icon = styled.img`
   width: 20px;
   cursor: pointer;
+  display: none;
+
+  @media only screen and (max-width: 768px) {
+    display: block;
+    margin: 10px;
+  }
+`;
+const LogoMobile = styled.img`
+  height: 50px;
+
+  @media only screen and (max-width: 768px) {
+    display: block;
+    height: 40px;
+    padding-left: 10px;
+  }
+
+  @media only screen and (min-width: 769px) {
+    display: none;
+  }
 `;
 
 const Button = styled.a`
   text-decoration: none;
   display: flex;
-  align-items:  center;
+  align-items: center;
   justify-content: center;
   font-weight: 400;
   width: 100px;
@@ -110,7 +137,7 @@ const Button = styled.a`
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  img{
+  img {
     padding: 5px;
   }
   @media only screen and (max-width: 768px) {
@@ -118,51 +145,71 @@ const Button = styled.a`
   }
 `;
 const Navbar = ({ activeLink, handleClick }) => {
-  
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const handleMenuToggle = () => {
+    setMenuOpen(!menuOpen);
+  };
 
   return (
     <Section className="home">
       <Container>
-        <Links>
-          <Logo src="./img/logos.png" />
-          <List>
-            <ListItem
-              href="#home"
-              onClick={() => handleClick("home")}
-              className={activeLink === "home" ? "active" : ""}
-            >
-              Home
-            </ListItem>
-            <ListItem
-              href="#about"
-              onClick={() => handleClick("about")}
-              className={activeLink === "about" ? "active" : ""}
-            >
-              About
-            </ListItem>
-            <ListItem
-              href="#projects"
-              onClick={() => handleClick("projects")}
-              className={activeLink === "projects" ? "active" : ""}
-            >
-              Projects
-            </ListItem>
-            <ListItem
-              href="#contact"
-              onClick={() => handleClick("contact")}
-              className={activeLink === "contact" ? "active" : ""}
-            >
-              Contact
-            </ListItem>
-          </List>
+      <LogoMobile src="./img/logos.png"></LogoMobile>
+        <Links menuOpen={menuOpen}>
+        
+         
+          <Logo src="./img/logos.png"></Logo>
+          <ListItemMobile
+            href="#home"
+            onClick={() => {
+              handleClick("home");
+              setMenuOpen(false);
+            }}
+            className={activeLink === "home" ? "active" : ""}
+          >
+            Home
+          </ListItemMobile>
+          <ListItemMobile
+            href="#about"
+            onClick={() => {
+              handleClick("about");
+              setMenuOpen(false);
+            }}
+            className={activeLink === "about" ? "active" : ""}
+          >
+            About
+          </ListItemMobile>
+          <ListItemMobile
+            href="#projects"
+            onClick={() => {
+              handleClick("projects");
+              setMenuOpen(false);
+            }}
+            className={activeLink === "projects" ? "active" : ""}
+          >
+            Projects
+          </ListItemMobile>
+          <ListItemMobile
+            href="#contact"
+            onClick={() => {
+              handleClick("contact");
+              setMenuOpen(false);
+            }}
+            className={activeLink === "contact" ? "active" : ""}
+          >
+            Contact
+          </ListItemMobile>
+    
         </Links>
         <Icons>
-         
-          <Button href="./img/Jeremie_Walls_Resume.docx" target="_blank">Resume <img src="./img/download.png" alt="" /></Button>
+          <Button href="./img/Jeremie_Walls_Resume.pdf" target="_blank">
+            Resume <img src="./img/download.png" alt="" />
+          </Button>
+          <Icon src="./img/menu.png" onClick={handleMenuToggle}></Icon>
         </Icons>
       </Container>
     </Section>
   );
 };
- 
+
 export default Navbar;

@@ -1,8 +1,7 @@
 import React, { Suspense } from "react";
 import styled from "styled-components";
-
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls, Sphere, MeshDistortMaterial } from "@react-three/drei";
+import { Sphere, MeshDistortMaterial } from "@react-three/drei";
 
 const Section = styled.div`
   height: 100vh;
@@ -140,7 +139,7 @@ const Hero = ({ handleClick }) => {
   };
   return (
    
-    <Section>      
+    <Section id="home">      
       
       <Container>
         <Left>

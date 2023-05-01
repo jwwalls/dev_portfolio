@@ -4,7 +4,7 @@ import ProjectCard from "./ProjectCard";
 
 const Section = styled.section`
   height: 100vh;
- 
+
   display: flex;
   justify-content: center;
 
@@ -36,7 +36,7 @@ const Container = styled.div`
 const Left = styled.div`
   flex: 1;
   display: flex;
-  align-items: center;
+ 
 
   flex-direction: column;
   height: 100%;
@@ -47,7 +47,7 @@ const Left = styled.div`
     height: 100%;
     width: 100%;
     scroll-snap-align: center;
-
+    align-items: center;
     gap: 20px;
   }
 `;
@@ -105,16 +105,16 @@ const Right = styled.div`
 
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   @media only screen and (max-width: 768px) {
     width: 100%;
-
+    justify-content: center;
     height: 50%;
     scroll-snap-align: center;
   }
 `;
 const Projects = styled.div`
-  width: 80%;
+  width: 100%;
   height: 80%;
   border-radius: 20px;
   padding: 5px;
