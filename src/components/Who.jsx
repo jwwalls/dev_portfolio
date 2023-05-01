@@ -9,6 +9,7 @@ const Section = styled.div`
   align-items: center;
   justify-content: space-between;
 
+
   @media only screen and (max-width: 768px) {
     height: 200vh;
   }
@@ -16,10 +17,11 @@ const Section = styled.div`
 
 const Container = styled.div`
   height: 100%;
-  scroll-snap-align: center;
-  width: 1400px;
+  
+  width: 80%;
   display: flex;
   justify-content: space-between;
+  gap: 1%;
 
   @media only screen and (max-width: 768px) {
     width: 100%;
@@ -119,8 +121,8 @@ const Button = styled.a`
   cursor: pointer;
 `;
 const Skills = styled.div`
-  width: 90px;
-  height: 120px;
+  width: 15%;
+  height: 20%;
   border-radius: 20px;
   padding: 5px;
   box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
@@ -142,7 +144,7 @@ const Box = styled.div`
   height: 100%;
 
   img {
-    height: 60px;
+    height: 50%;
     @media only screen and (max-width: 768px) {
       height: 45px;
     }

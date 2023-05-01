@@ -11,6 +11,7 @@ const Section = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  
 
   @media only screen and (max-width: 768px) {
     height: 200vh;
@@ -19,8 +20,9 @@ const Section = styled.div`
 
 const Container = styled.div`
   height: 100%;
-  scroll-snap-align: center;
-  width: 1400px;
+  width: 80%;
+
+
   display: flex;
   justify-content: space-between;
 
@@ -34,6 +36,8 @@ const Container = styled.div`
 `;
 
 const Left = styled.div`
+
+  
   flex: 2;
   display: flex;
   flex-direction: column;
@@ -97,6 +101,7 @@ text-decoration: none;
 const Right = styled.div`
   flex: 3;
   position: relative;
+  width: 50%;
   @media only screen and (max-width: 768px) {
     flex: 1;
     width: 100%;
@@ -106,7 +111,7 @@ const Right = styled.div`
 `;
 
 const Img = styled.img`
-  width: 800px;
+  width: 55%;
   height: 600px;
   object-fit: contain;
   position: absolute;

@@ -4,7 +4,7 @@ import ProjectCard from "./ProjectCard";
 
 const Section = styled.section`
   height: 100vh;
-  scroll-snap-align: center;
+ 
   display: flex;
   justify-content: center;
 
@@ -21,6 +21,8 @@ const Section = styled.section`
 
 const Container = styled.div`
   width: 100%;
+  width: 80%;
+ 
   display: flex;
   justify-content: space-between;
 
@@ -60,7 +62,7 @@ const List = styled.ul`
 `;
 
 const ListItem = styled.li`
-  font-size: 50px;
+  font-size: 40px;
   font-weight: bold;
   cursor: pointer;
 

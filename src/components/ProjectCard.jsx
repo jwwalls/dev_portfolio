@@ -9,6 +9,7 @@ const Card = styled.div`
   color: white;
   width: 100%;
   height: 100%;
+  overflow: hidden;
  
   border-radius: 17px;
 
@@ -130,7 +131,7 @@ const Right = styled.div`
 const Buttons = styled.div`
   display: flex;
   justify-content: center;
-  gap: 50px;
+  gap: 10%;
   width: 40%;
   padding-left: 5%;
   padding-right 5%;
@@ -180,9 +181,13 @@ const ChallengesText = styled.div`
   padding-left: 20px;
   padding-right: 20px;
   font-size: 15px;
+  text-overflow: ellipsis;
+  overflow: hidden;
 `;
 const Lessons = styled.div`
   height: 50%;
+  text-overflow: ellipsis;
+  overflow: hidden;
   @media only screen and (max-width: 768px) {
     margin: 0px;
    display: none;
@@ -199,6 +204,7 @@ const LessonsText = styled.div`
 const DescriptionsSection = styled.section`
 display: flex;
 height: 100%;
+overflow: hidden;
 
 
 `;

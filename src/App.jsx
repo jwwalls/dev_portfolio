@@ -8,6 +8,8 @@ import Works from "./components/Works";
 
 const Container = styled.div`
   height: 100vh;
+  display: flex;
+  flex-direction: column;
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
   overflow-y: auto;

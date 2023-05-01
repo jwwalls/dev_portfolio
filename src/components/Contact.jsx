@@ -5,7 +5,7 @@ import Map from "./Map";
 
 const Section = styled.div`
   height: 100vh;
-  scroll-snap-align: center;
+
   @media only screen and (max-width: 768px) {
     height: 100vh;
     scroll-snap-align: none;
