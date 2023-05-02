@@ -14,7 +14,7 @@ const Container = styled.div`
 
 background-color: #161616;
   width: 100%;
-  height: 3%;  
+  height: 2%;  
   
   display: flex;
   justify-content: space-between;
